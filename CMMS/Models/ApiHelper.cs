@@ -7,8 +7,8 @@ namespace CMMS.Models
   {
     public static async Task<string> ApiCall(string apiKey)
     {
-      RestClient client = new RestClient("https://api.nytimes.com/svc/topstories/v2");
-      RestRequest request = new RestRequest($"home.json?api-key={apiKey}", Method.GET);
+      RestClient client = new RestClient(""); //launch url in here 
+      RestRequest request = new RestRequest($"{apiKey}", Method.GET);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
